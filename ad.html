@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Cache-control" content="no-cache"/>
+		<meta http-equiv="Pragma" content="no-cache"/>
+		<title>RENUMESH Portal</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" href="img/RENUMESH-PNG.png">
+	</head>
+	<body>
+		<div id="language-selector">
+			<label for="language">Select Language: </label>
+			<select id="language" onchange="changeLanguage()">
+				<option value="en">English</option>
+				<option value="sw">Kiswahili</option>
+			</select>
+		</div>
+
+		<div class="ad-container">
+			<!-- Other content of the captive portal here -->
+
+			<!-- <img src="https://raw.githubusercontent.com/CharlesKasasira/testing/refs/heads/main/cp_ad.jpeg" alt="AD" width="auto" height="180px" /> -->
+
+				<!-- <h2>Advertisement</h2> -->
+				<!-- <img src="your-ad-image.jpg" alt="Ad Banner" /> -->
+				<!-- OR for iframe-based ads (like Google AdSense) -->
+				<iframe src="https://raw.githubusercontent.com/CharlesKasasira/testing/refs/heads/main/cp_ad.jpeg" width="300" height="250" frameborder="0" scrolling="no"></iframe>	
+		</div>
+
+		<div id="cent">
+			<div id="block">
+				<img alt="RENUMESH" src="img/RENUMESH-PNG.png" height="152px">
+			</div>
+			<div id="block">
+				<p class="title-font" id="welcome-text">Welcome!</p>
+				<p class="subtitle-font" id="instruction-text">Enter your credentials to access the internet.</p>
+				<form name="form" method="post" action="http://192.168.0.1/www/login.chi">
+					<INPUT TYPE="hidden" NAME="userurl" VALUE="https://renumesh.africa">
+					<div id="login_form">
+						  <input name="username" id="username" value="" TYPE="hidden" VALUE="password" placeholder="username">
+						  <br>
+						  <input name="password" id="password" value="" type="text" placeholder="voucher" oninput="updateUsername()">
+						  <br>
+						  <input type="submit" name="button" id="login-button" value="Login">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<footer>
+			<p class="copyright" id="copyright">&copy; Copyright 2024 RENUMESH</p>
+		</footer>
+
+		<script>
+			function updateUsername() {
+				var password = document.getElementById("password").value;
+				document.getElementById("username").value = password;
+			}
+
+			function changeLanguage() {
+				var lang = document.getElementById("language").value;
+
+				if (lang === "en") {
+					document.getElementById("welcome-text").innerText = "Welcome!";
+					document.getElementById("instruction-text").innerText = "Enter your credentials to access the internet.";
+					document.getElementById("login-button").value = "Login";
+				} else if (lang === "sw") {
+					document.getElementById("welcome-text").innerText = "Karibu!";
+					document.getElementById("instruction-text").innerText = "Weka maelezo yako kuingia mtandao.";
+					document.getElementById("login-button").value = "Ingia";
+				}
+			}
+		</script>
+	</body>
+</html>
